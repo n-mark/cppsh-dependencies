@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:35:07 MSK 2025
+bsh-2.1.8.pom>=
+bsh-2.1.8.jar>=

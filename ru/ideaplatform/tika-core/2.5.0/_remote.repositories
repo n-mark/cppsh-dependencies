@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:38:01 MSK 2025
+tika-core-2.5.0.jar>=
+tika-core-2.5.0.pom>=

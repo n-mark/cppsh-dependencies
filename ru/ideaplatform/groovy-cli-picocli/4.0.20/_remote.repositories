@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:35:40 MSK 2025
+groovy-cli-picocli-4.0.20.pom>=
+groovy-cli-picocli-4.0.20.jar>=

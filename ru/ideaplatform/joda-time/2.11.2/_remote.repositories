@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:37:12 MSK 2025
+joda-time-2.11.2.jar>=
+joda-time-2.11.2.pom>=

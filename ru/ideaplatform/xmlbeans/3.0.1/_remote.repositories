@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:38:04 MSK 2025
+xmlbeans-3.0.1.jar>=
+xmlbeans-3.0.1.pom>=

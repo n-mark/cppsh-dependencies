@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>ru.ideaplatform</groupId>
+  <artifactId>hibernate-commons-annotations</artifactId>
+  <versioning>
+    <release>5.1.2.final</release>
+    <versions>
+      <version>5.1.2.final</version>
+    </versions>
+    <lastUpdated>20250716093615</lastUpdated>
+  </versioning>
+</metadata>

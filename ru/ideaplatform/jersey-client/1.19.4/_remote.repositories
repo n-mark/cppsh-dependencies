@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:37:00 MSK 2025
+jersey-client-1.19.4.jar>=
+jersey-client-1.19.4.pom>=

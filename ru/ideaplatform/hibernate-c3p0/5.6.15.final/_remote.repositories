@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 16 12:36:14 MSK 2025
+hibernate-c3p0-5.6.15.final.pom>=
+hibernate-c3p0-5.6.15.final.jar>=

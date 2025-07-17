@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>ru.ideaplatform</groupId>
+  <artifactId>hibernate-c3p0</artifactId>
+  <versioning>
+    <release>5.6.15.final</release>
+    <versions>
+      <version>5.6.15.final</version>
+    </versions>
+    <lastUpdated>20250716093613</lastUpdated>
+  </versioning>
+</metadata>
