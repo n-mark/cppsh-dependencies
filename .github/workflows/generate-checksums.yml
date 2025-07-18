@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write  # 🔐 нужно для git push
+  contents: write
 
 jobs:
   generate:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 🔄 важно для git push
+          fetch-depth: 0
 
       - name: Генерация .sha1 и .md5 для pom/jar
         run: |
