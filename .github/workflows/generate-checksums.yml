@@ -1,0 +1,39 @@
+name: Generate Checksums
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Генерация .sha1 и .md5 для pom/jar
+        run: |
+          find . \( -name "*.pom" -o -name "*.jar" \) | while read file; do
+            sha1sum "$file" | awk '{print $1}' > "$file.sha1"
+            md5sum "$file"  | awk '{print $1}' > "$file.md5"
+          done
+
+      - name: Коммит и push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Нет изменений — не пушим."
+          else
+            git commit -m "Авто: Добавлены .sha1/.md5 для Maven-артефактов"
+            git push
+          fi
