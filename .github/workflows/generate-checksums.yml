@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**/*.pom'
-      - '**/*.jar'
 
 permissions:
   contents: write  # 🔐 нужно для git push
