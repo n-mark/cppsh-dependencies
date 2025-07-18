@@ -1,4 +1,4 @@
-name: Generate Checksums for Maven Artifacts
+name: Generate Checksums
 
 on:
   push:
@@ -8,25 +8,35 @@ on:
       - '**/*.pom'
       - '**/*.jar'
 
+permissions:
+  contents: write  # 🔐 нужно для git push
+
 jobs:
-  generate-checksums:
+  generate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 🔄 важно для git push
 
-      - name: Find .pom and .jar files and generate .sha1/.md5
+      - name: Генерация .sha1 и .md5 для pom/jar
         run: |
           find . \( -name "*.pom" -o -name "*.jar" \) | while read file; do
             sha1sum "$file" | awk '{print $1}' > "$file.sha1"
-            md5sum  "$file" | awk '{print $1}' > "$file.md5"
+            md5sum "$file"  | awk '{print $1}' > "$file.md5"
           done
 
-      - name: Commit and push checksums
+      - name: Коммит и push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add **/*.sha1 **/*.md5
-          git diff --cached --quiet || git commit -m "Add .sha1 and .md5 for updated Maven artifacts"
-          git push
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Нет изменений — не пушим."
+          else
+            git commit -m "Авто: Добавлены .sha1/.md5 для Maven-артефактов"
+            git push
+          fi
